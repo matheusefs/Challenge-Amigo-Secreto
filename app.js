@@ -13,6 +13,7 @@ function adicionarAmigo(){
         listaDeAmigos.push(amigo);
         limparCampo();
         console.log(listaDeAmigos);
+        exibirListaDeAmigos();
     }
 }
 
@@ -23,3 +24,14 @@ function limparCampo(){
     amigo.value = '';
 }
 
+// Função para exibir a lista de amigos na página
+
+function exibirListaDeAmigos(){
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = ''; // Limpa a lista antes de exibir novamente
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        let amigo = document.createElement('li');
+        amigo.textContent = listaDeAmigos[i];
+        lista.appendChild(amigo);
+    }
+}
