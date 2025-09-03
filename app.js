@@ -35,3 +35,16 @@ function exibirListaDeAmigos(){
         lista.appendChild(amigo);
     }
 }
+
+// Função para sortear amigos
+
+function sortearAmigo(){
+    if(listaDeAmigos.length == 0){
+        document.getElementById('resultado').innerHTML = 'Nenhum amigo para sortear, ou todos já foram sorteados.';
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+    let nomeSorteado = listaDeAmigos[indiceAleatorio];
+    listaDeAmigos.splice(indiceAleatorio, 1); // Remove o amigo sorteado da lista, garante que não será sorteado novamente.
+    document.getElementById('resultado').innerHTML = 'Amigo sorteado: ' + nomeSorteado;
+}
